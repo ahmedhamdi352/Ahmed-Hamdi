@@ -1,0 +1,23 @@
+{
+  "name": "Ahmed Hamdi Portfolio",
+  "short_name": "Ahmed Hamdi",
+  "description": "Senior Full Stack Engineer building AI-enabled enterprise platforms, dashboards, and secure internal tools.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#22C55E",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-icon",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ahmed Hamdi Portfolio
 
-## Getting Started
+Production portfolio for Ahmed Hamdi, a Senior Full Stack Engineer building
+AI-enabled enterprise platforms, frontend architectures, dashboards, and
+secure internal tools.
 
-First, run the development server:
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Quality checks:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment
 
-## Learn More
+Copy `.env.example` to `.env.local` and configure:
 
-To learn more about Next.js, take a look at the following resources:
+```env
+RESEND_API_KEY=
+CONTACT_TO_EMAIL=ahmedhamdi352@gmail.com
+CONTACT_FROM_EMAIL=Portfolio <onboarding@resend.dev>
+NEXT_PUBLIC_SITE_URL=
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`NEXT_PUBLIC_SITE_URL` must be the canonical production origin, for example
+`https://example.com`, with no trailing path.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Required production asset
 
-## Deploy on Vercel
+Place the real CV at:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+public/files/Ahmed_Hamdi_Senior_FullStack_Engineer_CV.pdf
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Deploy to Vercel, configure the environment variables above, and verify the
+contact form after the Resend sender/domain is approved.
