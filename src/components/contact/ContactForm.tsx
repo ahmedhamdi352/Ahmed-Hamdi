@@ -197,13 +197,17 @@ export function ContactForm() {
           <FieldError>{errors.message?.message}</FieldError>
         </Field>
 
-        <div className="absolute -left-[10000px] top-auto size-px overflow-hidden">
+        <div
+          aria-hidden="true"
+          style={{ position: "absolute", left: "-10000px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }}
+        >
           <label htmlFor="website">Website</label>
           <input
             id="website"
             type="text"
             tabIndex={-1}
             autoComplete="off"
+            aria-hidden="true"
             {...register("website")}
           />
         </div>

@@ -2,7 +2,6 @@ import Link from "next/link";
 import {
   ArrowRight,
   Braces,
-  Cloud,
   Code2,
   ContainerIcon,
   Database,
@@ -30,7 +29,7 @@ const icons: Record<string, typeof Code2> = {
   mongodb: Database,
   docker: ContainerIcon,
   git: GitBranch,
-  aws: Cloud,
+  cicd: GitBranch,
 };
 
 export function TechStackPreview() {

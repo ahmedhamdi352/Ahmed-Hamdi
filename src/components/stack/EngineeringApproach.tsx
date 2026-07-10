@@ -18,7 +18,7 @@ export function EngineeringApproach() {
             {engineeringApproach.map((item, index) => (
               <Card key={item.title} className="flex flex-col p-5 lg:min-h-64">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs text-slate-600">0{index + 1}</span>
+                  <span aria-hidden="true" className="font-mono text-xs text-slate-600">{`0${index + 1}`}</span>
                   <CheckCircle2 aria-hidden="true" className="size-4 text-emerald-400" />
                 </div>
                 <h3 className="mt-8 text-base font-semibold text-white">{item.title}</h3>

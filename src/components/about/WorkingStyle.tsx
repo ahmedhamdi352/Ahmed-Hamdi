@@ -20,7 +20,7 @@ export function WorkingStyle() {
                 className="flex min-h-32 flex-col justify-between rounded-xl border border-white/10 bg-white/[0.025] p-5"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs text-slate-600">0{index + 1}</span>
+                  <span aria-hidden="true" className="font-mono text-xs text-slate-600">{`0${index + 1}`}</span>
                   <Check aria-hidden="true" className="size-4 text-emerald-400" />
                 </div>
                 <p className="mt-6 text-sm font-medium leading-6 text-slate-200">

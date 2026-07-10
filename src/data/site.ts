@@ -16,7 +16,7 @@ export const siteConfig = {
   positioning:
     "Senior Full Stack Engineer building AI-enabled enterprise platforms, dashboards, and secure internal tools.",
   description:
-    "I help organizations design, build, and scale modern web applications, dashboards, and AI-powered solutions that deliver real business impact.",
+    "I design and build secure, scalable, and high-performance web applications that solve real-world problems and drive meaningful impact.",
   email: "ahmedhamdi352@gmail.com",
   location: "Dubai, UAE",
   responseTime: "Usually within 24 hours",
@@ -31,6 +31,7 @@ export const siteConfig = {
 export const navigation: NavigationItem[] = [
   { label: "Home", href: "/" },
   { label: "Work", href: "/work" },
+  { label: "Case Studies", href: "/work" },
   { label: "About", href: "/about" },
   { label: "Stack", href: "/stack" },
   { label: "Contact", href: "/contact" },

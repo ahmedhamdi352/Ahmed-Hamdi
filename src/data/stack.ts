@@ -48,7 +48,7 @@ export const featuredTechnologies: Technology[] = [
   { name: "MongoDB", icon: "mongodb", tone: "text-green-400" },
   { name: "Docker", icon: "docker", tone: "text-sky-400" },
   { name: "Git", icon: "git", tone: "text-orange-400" },
-  { name: "AWS", icon: "aws", tone: "text-amber-300" },
+  { name: "CI/CD", icon: "cicd", tone: "text-slate-300" },
 ];
 
 export const capabilities: Capability[] = [

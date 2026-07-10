@@ -8,11 +8,11 @@ export const inquiryTypes = [
 
 export const budgetOptions = [
   "Not sure yet",
-  "Less than $1,000",
-  "$1,000 - $3,000",
-  "$3,000 - $7,000",
-  "$7,000+",
+  "Freelance: Small project",
+  "Freelance: Medium project",
+  "Freelance: Large project",
   "Full-time role / monthly package",
+  "Consulting / hourly rate",
 ] as const;
 
 export type ContactInfoItem = {

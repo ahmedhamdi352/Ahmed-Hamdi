@@ -46,7 +46,7 @@ export const projects: Project[] = [
       "A production-focused conversational platform designed to provide consistent AI-assisted services across public web and mobile experiences while connecting operational teams to the supporting workflows.",
     role: "Senior Full Stack Engineer",
     company: "Dubai Police — Department of AI",
-    year: "2023 — Present",
+    year: "2025 — Present",
     featured: true,
     tech: ["React", "TypeScript", "Node.js", "REST APIs", "AI Integration"],
     problem:
@@ -82,7 +82,7 @@ export const projects: Project[] = [
       "An internal platform that organizes reusable AI capabilities into a clear, role-aware experience, helping teams understand available services and use them through secure integration patterns.",
     role: "Senior Full Stack Engineer",
     company: "Dubai Police — Department of AI",
-    year: "2023 — Present",
+    year: "2025 — Present",
     featured: true,
     tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "RBAC"],
     problem:
@@ -118,7 +118,7 @@ export const projects: Project[] = [
       "A suite of reusable dashboard views that turns service and interaction data into clear operational context for teams monitoring chatbot performance and customer journeys.",
     role: "Senior Full Stack Engineer",
     company: "Dubai Police — Department of AI",
-    year: "2023 — Present",
+    year: "2025 — Present",
     featured: true,
     tech: ["React", "TypeScript", "REST APIs", "Tailwind CSS", "Data Visualization"],
     problem:
@@ -154,7 +154,7 @@ export const projects: Project[] = [
       "Public-facing digital products designed to help residents and visitors access city information, discover events, and engage with community services through consistent mobile and web experiences.",
     role: "Senior Frontend Developer",
     company: "Apps Wave",
-    year: "2022 — 2023",
+    year: "2024 — 2025",
     featured: false,
     tech: ["React Native", "React", "TypeScript", "REST APIs", "Design Systems"],
     problem:
@@ -190,7 +190,7 @@ export const projects: Project[] = [
       "A workflow-focused platform that helps delivery teams coordinate project activity, understand progress, allocate resources, and collaborate through a clear operational interface.",
     role: "Senior Frontend Developer",
     company: "Apps Wave",
-    year: "2022 — 2023",
+    year: "2024 — 2025",
     featured: false,
     tech: ["React", "Next.js", "TypeScript", "REST APIs", "Tailwind CSS"],
     problem:
@@ -226,7 +226,7 @@ export const projects: Project[] = [
       "A full-stack operational system built around the practical needs of restaurant teams, connecting point-of-sale interfaces with administrative modules and supporting backend workflows.",
     role: "Senior Full Stack Developer",
     company: "Barq Systems",
-    year: "2020 — 2022",
+    year: "2022 — 2024",
     featured: false,
     tech: ["React", "Node.js", "REST APIs", "PostgreSQL", "JavaScript"],
     problem:
