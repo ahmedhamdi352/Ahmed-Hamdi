@@ -6,13 +6,11 @@ import { siteConfig } from "@/data/site";
 import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
-const defaultTitle = "Ahmed Hamdi | Senior Full Stack Engineer";
+const defaultTitle = "Ahmed Hamdi — Senior Full Stack Engineer | AI & Enterprise Platforms";
 const defaultDescription =
-  "Senior Full Stack Engineer in Dubai building AI-enabled enterprise platforms, scalable frontend architectures, dashboards, and secure internal tools.";
-const siteUrl = getSiteUrl();
-// Local-only metadata fallback. Production must set NEXT_PUBLIC_SITE_URL;
-// Vercel's production URL is used automatically when available.
-const metadataBase = siteUrl ?? new URL("http://localhost:3000");
+  "Dubai-based Senior Full Stack Engineer building secure AI-enabled platforms, dashboards, internal systems, and full-stack web applications using React, Next.js, Node.js, Python, and AI integrations.";
+const siteUrl = getSiteUrl() ?? new URL(siteConfig.url);
+const metadataBase = siteUrl;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,30 +45,24 @@ export const metadata: Metadata = {
   openGraph: {
     title: defaultTitle,
     description: defaultDescription,
-    ...(siteUrl ? { url: siteUrl } : {}),
+    url: siteUrl,
     siteName: "Ahmed Hamdi Portfolio",
     locale: "en_US",
     type: "website",
-    ...(siteUrl
-      ? {
-          images: [
-            {
-              url: new URL("/opengraph-image", siteUrl),
-              width: 1200,
-              height: 630,
-              alt: "Ahmed Hamdi — Senior Full Stack Engineer",
-            },
-          ],
-        }
-      : {}),
+    images: [
+      {
+        url: new URL("/opengraph-image", siteUrl),
+        width: 1200,
+        height: 630,
+        alt: "Ahmed Hamdi — Senior Full Stack Engineer building AI and enterprise platforms",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: defaultTitle,
     description: defaultDescription,
-    ...(siteUrl
-      ? { images: [new URL("/opengraph-image", siteUrl)] }
-      : {}),
+    images: [new URL("/opengraph-image", siteUrl)],
   },
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
@@ -90,6 +82,32 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body className="flex min-h-screen flex-col antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: siteConfig.name,
+              url: siteConfig.url,
+              jobTitle: siteConfig.role,
+              email: siteConfig.socialLinks.email,
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Dubai",
+                addressCountry: "AE",
+              },
+              sameAs: [siteConfig.socialLinks.linkedin],
+              knowsAbout: [
+                "Enterprise AI platforms",
+                "Full-stack web applications",
+                "React and Next.js",
+                "AI chatbot integrations",
+                "Dashboards and internal systems",
+              ],
+            }).replace(/</g, "\\u003c"),
+          }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

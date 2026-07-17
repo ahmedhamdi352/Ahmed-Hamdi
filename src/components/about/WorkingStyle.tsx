@@ -1,31 +1,28 @@
-import { Check } from "lucide-react";
 import { Container } from "@/components/layout/Container";
-import { SectionHeader } from "@/components/layout/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
-import { workingPrinciples } from "@/data/about";
+
+const principles = [
+  "Start with the business workflow",
+  "Design the system before the UI",
+  "Build reusable foundations",
+  "Keep security and maintainability in the loop",
+  "Ship production-ready work",
+];
 
 export function WorkingStyle() {
   return (
-    <section className="border-y border-white/[0.06] bg-white/[0.012] py-16 sm:py-24">
+    <section className="border-y border-border bg-[var(--surface-soft)] py-24 sm:py-28">
       <Container>
-        <Reveal>
-          <SectionHeader
-            title="How I Work"
-            description="Practical principles that guide architecture, collaboration, and delivery."
-          />
-          <ol className="grid gap-3 md:grid-cols-2 lg:grid-cols-5">
-            {workingPrinciples.map((principle, index) => (
-              <li
-                key={principle}
-                className="flex min-h-32 flex-col justify-between rounded-xl border border-white/10 bg-white/[0.025] p-5"
-              >
-                <div className="flex items-center justify-between">
-                  <span aria-hidden="true" className="font-mono text-xs text-slate-600">{`0${index + 1}`}</span>
-                  <Check aria-hidden="true" className="size-4 text-emerald-400" />
-                </div>
-                <p className="mt-6 text-sm font-medium leading-6 text-slate-200">
-                  {principle}
-                </p>
+        <Reveal className="grid gap-12 lg:grid-cols-[280px_1fr] lg:gap-20">
+          <div>
+            <p className="section-label">Approach</p>
+            <h2 className="font-display mt-4 text-5xl leading-tight tracking-[-0.04em] text-foreground">How I think about engineering.</h2>
+          </div>
+          <ol className="border-t border-border">
+            {principles.map((principle, index) => (
+              <li key={principle} className="flex items-center gap-5 border-b border-border py-6 text-base text-foreground">
+                <span className="font-display text-2xl text-[var(--bronze)]">0{index + 1}</span>
+                <span className="flex-1">{principle}</span>
               </li>
             ))}
           </ol>

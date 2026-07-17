@@ -6,9 +6,9 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const focusAreas = [
-  "Frontend Architecture",
+  "Secure AI Platforms",
   "Enterprise Dashboards",
-  "Secure Internal Tools",
+  "Full-Stack Systems",
 ];
 
 export default function OpenGraphImage() {
@@ -18,8 +18,8 @@ export default function OpenGraphImage() {
         style={{
           alignItems: "stretch",
           background:
-            "radial-gradient(circle at 75% 20%, rgba(34,197,94,.16), transparent 38%), #030712",
-          color: "#f9fafb",
+            "radial-gradient(circle at 18% 12%, rgba(184,137,77,.15), transparent 34%), radial-gradient(circle at 88% 5%, rgba(47,79,62,.11), transparent 30%), #f7f3ea",
+          color: "#171412",
           display: "flex",
           height: "100%",
           padding: "64px",
@@ -28,7 +28,8 @@ export default function OpenGraphImage() {
       >
         <div
           style={{
-            border: "1px solid rgba(255,255,255,.12)",
+            background: "#fffdf8",
+            border: "1px solid rgba(23,20,18,.1)",
             borderRadius: "28px",
             display: "flex",
             flex: 1,
@@ -44,7 +45,7 @@ export default function OpenGraphImage() {
               width: "68%",
             }}
           >
-            <div style={{ color: "#22c55e", display: "flex", fontSize: 28, fontWeight: 700 }}>
+            <div style={{ color: "#2f4f3e", display: "flex", fontFamily: "serif", fontSize: 34 }}>
               AH
             </div>
             <div style={{ display: "flex", flexDirection: "column" }}>
@@ -59,18 +60,18 @@ export default function OpenGraphImage() {
               >
                 Ahmed Hamdi
               </div>
-              <div style={{ color: "#cbd5e1", display: "flex", fontSize: 27, marginTop: 18 }}>
+              <div style={{ color: "#5f574f", display: "flex", fontSize: 27, marginTop: 18 }}>
                 Senior Full Stack Engineer
               </div>
-              <div style={{ color: "#22c55e", display: "flex", fontSize: 22, marginTop: 26 }}>
+              <div style={{ color: "#b8894d", display: "flex", fontSize: 22, marginTop: 26 }}>
                 AI-enabled enterprise platforms
               </div>
             </div>
           </div>
           <div
             style={{
-              background: "rgba(7,17,31,.72)",
-              borderLeft: "1px solid rgba(255,255,255,.08)",
+              background: "#17221c",
+              borderLeft: "1px solid rgba(23,20,18,.1)",
               display: "flex",
               flexDirection: "column",
               gap: 16,
@@ -84,10 +85,10 @@ export default function OpenGraphImage() {
                 key={label}
                 style={{
                   alignItems: "center",
-                  background: "rgba(255,255,255,.035)",
-                  border: "1px solid rgba(255,255,255,.1)",
+                  background: "rgba(255,253,248,.06)",
+                  border: "1px solid rgba(255,253,248,.12)",
                   borderRadius: 14,
-                  color: "#cbd5e1",
+                  color: "#f7f3ea",
                   display: "flex",
                   fontSize: 17,
                   gap: 12,
@@ -96,7 +97,7 @@ export default function OpenGraphImage() {
               >
                 <div
                   style={{
-                    background: "#22c55e",
+                    background: "#b8894d",
                     borderRadius: 999,
                     display: "flex",
                     height: 9,

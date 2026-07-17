@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 import { getSiteUrl } from "@/lib/site-url";
+import { siteConfig } from "@/data/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = getSiteUrl();
+  const siteUrl = getSiteUrl() ?? new URL(siteConfig.url);
   const paths = [
     "/",
     "/work",
@@ -14,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return paths.map((path) => ({
-    url: siteUrl ? new URL(path, siteUrl).toString() : path,
+    url: new URL(path, siteUrl).toString(),
     changeFrequency: path === "/" ? "monthly" : "yearly",
     priority: path === "/" ? 1 : path === "/work" ? 0.9 : 0.7,
   }));

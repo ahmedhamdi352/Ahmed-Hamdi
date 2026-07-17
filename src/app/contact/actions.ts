@@ -18,6 +18,7 @@ export async function sendContactMessage(
     company: formData.get("company") || undefined,
     inquiryType: formData.get("inquiryType"),
     budget: formData.get("budget") || undefined,
+    timeline: formData.get("timeline"),
     message: formData.get("message"),
     website: formData.get("website") || undefined,
   };
@@ -25,7 +26,7 @@ export async function sendContactMessage(
   if (typeof rawInput.website === "string" && rawInput.website) {
     return {
       success: true,
-      message: "Thanks — your message has been sent. I’ll get back to you soon.",
+      message: "Thanks — I received your message and will get back to you soon.",
     };
   }
 
@@ -51,7 +52,7 @@ export async function sendContactMessage(
     };
   }
 
-  const { name, email, company, inquiryType, budget, message } = result.data;
+  const { name, email, company, inquiryType, budget, timeline, message } = result.data;
   const resend = new Resend(apiKey);
 
   try {
@@ -66,6 +67,7 @@ export async function sendContactMessage(
         `Company: ${company || "Not provided"}`,
         `Inquiry Type: ${inquiryType}`,
         `Budget / Package: ${budget || "Not provided"}`,
+        `Timeline: ${timeline}`,
         "",
         "Message:",
         message,
@@ -84,7 +86,7 @@ export async function sendContactMessage(
 
     return {
       success: true,
-      message: "Thanks — your message has been sent. I’ll get back to you soon.",
+      message: "Thanks — I received your message and will get back to you soon.",
     };
   } catch {
     return {

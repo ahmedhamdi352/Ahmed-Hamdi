@@ -15,16 +15,16 @@ export function CaseStudySection({
   className,
 }: CaseStudySectionProps) {
   return (
-    <section className={cn("border-t border-white/[0.07] py-12 sm:py-16", className)}>
+    <section className={cn("grid gap-6 border-t border-border py-12 sm:grid-cols-[220px_1fr] sm:py-16", className)}>
       {eyebrow ? (
-        <p className="font-mono text-xs uppercase tracking-[0.18em] text-emerald-400">
+        <p className="section-label">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+      <h2 className="font-display text-3xl tracking-[-0.025em] text-foreground sm:text-4xl">
         {title}
       </h2>
-      <div className="mt-6 text-base leading-8 text-slate-300">{children}</div>
+      <div className="text-base leading-8 text-[var(--text-secondary)]">{children}</div>
     </section>
   );
 }

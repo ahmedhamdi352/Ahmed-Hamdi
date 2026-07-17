@@ -8,27 +8,27 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    title: "Frontend Architecture",
+    title: "AI Chatbots & Assistants",
     description:
-      "Scalable, maintainable, and high-performance web interfaces using React, Next.js, TypeScript, and modern frontend practices.",
+      "Chatbot interfaces, AI response flows, backend integrations, and operational visibility for internal or customer-facing platforms.",
     icon: "frontend",
   },
   {
-    title: "Full Stack Development",
+    title: "Enterprise Dashboards",
     description:
-      "End-to-end development of web applications, APIs, dashboards, and internal tools using Node.js, Python, and modern stacks.",
+      "Analytics dashboards, admin portals, reporting workflows, and back-office tools for data-heavy teams.",
     icon: "fullstack",
   },
   {
-    title: "AI-Powered Solutions",
+    title: "Internal Platforms",
     description:
-      "Integrating AI services, LLM workflows, chatbots, and automation tools to enhance user experience and business processes.",
+      "Service hubs, workflow automation tools, role-aware portals, and secure enterprise web applications.",
     icon: "ai",
   },
   {
-    title: "Enterprise Delivery",
+    title: "Full Stack Delivery",
     description:
-      "Building secure, reliable, and scalable solutions for government and enterprise environments with a focus on quality and performance.",
+      "Frontend architecture, backend APIs, authentication, integrations, deployment workflows, and production support.",
     icon: "enterprise",
   },
 ];

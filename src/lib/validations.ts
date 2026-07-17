@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { budgetOptions, inquiryTypes } from "@/data/contact";
+import { budgetOptions, inquiryTypes, timelineOptions } from "@/data/contact";
 
 export const contactSchema = z.object({
   name: z
@@ -15,6 +15,9 @@ export const contactSchema = z.object({
   budget: z
     .union([z.enum(budgetOptions), z.literal("")])
     .optional(),
+  timeline: z.enum(timelineOptions, {
+    error: "Please select a timeline.",
+  }),
   message: z
     .string()
     .trim()

@@ -1,64 +1,59 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/Container";
-import { SectionHeader } from "@/components/layout/SectionHeader";
-import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProjectTechBadges } from "@/components/work/ProjectTechBadges";
 import { ProjectVisual } from "@/components/work/ProjectVisual";
 import { projects } from "@/data/projects";
 
+const badges: Record<string, string> = {
+  "aix-chatbot-platform": "Government AI Platform",
+  "ai-service-hub": "Secure Internal AI Hub",
+  "customer-insights-chatbot-back-office": "Analytics & Operations Dashboard",
+};
+
 export function FeaturedProjects() {
-  const featuredProjects = projects
-    .filter((project) => project.featured)
-    .slice(0, 3);
+  const featured = projects.filter((project) => project.featured).slice(0, 3);
 
   return (
-    <section className="pb-16 sm:pb-24">
+    <section className="border-y border-border bg-[#fffaf1] py-24 sm:py-32">
       <Container>
         <Reveal>
-          <SectionHeader
-            title="Featured Projects"
-            description="A selection of projects that highlight my skills and impact."
-            link={{ label: "View all projects", href: "/work" }}
-          />
-          <div className="grid gap-5 lg:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <Card
-                key={project.slug}
-                className="group overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-emerald-500/30"
-              >
-                <ProjectVisual project={project} compact />
-                <div className="p-5">
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-lg font-semibold text-white">
-                      {project.title}
-                    </h3>
-                    <Link
-                      href={`/work/${project.slug}`}
-                      aria-label={`Open ${project.title}`}
-                      className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-white/10 text-slate-400 hover:border-emerald-500/30 hover:text-emerald-400"
-                    >
-                      <ArrowUpRight aria-hidden="true" className="size-4" />
-                    </Link>
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="section-label">Selected work</p>
+              <h2 className="font-display mt-4 text-5xl tracking-[-0.04em] text-foreground sm:text-6xl">Platforms built for real operations.</h2>
+            </div>
+            <Link href="/work" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark">
+              View all work <ArrowUpRight aria-hidden="true" className="size-4" />
+            </Link>
+          </div>
+
+          <div className="mt-14 grid gap-5 sm:gap-8">
+            {featured.map((project, index) => (
+              <article key={project.slug} className="grid gap-8 border-t border-border py-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+                <div className={index % 2 ? "lg:order-2" : ""}>
+                  <div className="flex items-center gap-4">
+                    <span className="font-display text-2xl text-[var(--bronze)]">0{index + 1}</span>
+                    <span aria-hidden="true" className="h-px w-12 bg-[var(--bronze)]/70" />
                   </div>
-                  <p className="mt-2 min-h-18 text-sm leading-6 text-slate-400">
-                    {project.description}
-                  </p>
-                  <div className="mt-4">
-                    <ProjectTechBadges technologies={project.tech} limit={4} />
-                  </div>
+                  <p className="section-label mt-6 text-primary!">{badges[project.slug]}</p>
+                  <h3 className="font-display mt-3 text-4xl leading-tight tracking-[-0.035em] text-foreground sm:text-5xl">{project.title}</h3>
+                  <p className="mt-4 max-w-xl text-sm leading-7 text-[var(--text-secondary)]">{project.description}</p>
+                  <ul className="mt-5 grid gap-2">
+                    {project.responsibilities.slice(0, 3).map((item) => <li key={item} className="flex gap-3 text-xs leading-5 text-[var(--text-secondary)]"><span aria-hidden="true" className="mt-2 size-1 rounded-full bg-primary" />{item}</li>)}
+                  </ul>
+                  <div className="mt-6"><ProjectTechBadges technologies={project.tech} limit={5} /></div>
+                  <Link href={`/work/${project.slug}`} className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-dark">
+                    View case study <ArrowUpRight aria-hidden="true" className="size-4" />
+                  </Link>
                 </div>
-              </Card>
+                <div className={index % 2 ? "lg:order-1" : ""}>
+                  <ProjectVisual project={project} className="h-72 sm:h-80" />
+                </div>
+              </article>
             ))}
           </div>
-          <Link
-            href="/work"
-            className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-emerald-400 sm:hidden"
-          >
-            View all projects
-            <ArrowUpRight aria-hidden="true" className="size-4" />
-          </Link>
         </Reveal>
       </Container>
     </section>

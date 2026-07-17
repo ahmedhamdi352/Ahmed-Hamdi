@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ContactCTA } from "@/components/contact/ContactCTA";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactHero } from "@/components/contact/ContactHero";
 import { ContactInfo } from "@/components/contact/ContactInfo";
@@ -8,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Contact Ahmed Hamdi | Senior Full Stack Engineer",
+    absolute: "Contact — Ahmed Hamdi",
   },
   description:
     "Contact Ahmed Hamdi for senior full-stack engineering opportunities, frontend architecture, AI-enabled platforms, dashboards, internal tools, and freelance projects.",
@@ -17,16 +16,14 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <ContactHero />
       <section className="py-16 sm:py-24">
         <Container>
-          <Reveal className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
-            <ContactInfo />
+          <Reveal className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-16">
+            <div><ContactHero /><ContactInfo /></div>
             <ContactForm />
           </Reveal>
         </Container>
       </section>
-      <ContactCTA />
     </>
   );
 }

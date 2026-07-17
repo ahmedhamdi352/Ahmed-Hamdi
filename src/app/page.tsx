@@ -1,18 +1,18 @@
 import { ContactCTA } from "@/components/home/ContactCTA";
-import { ExperiencePreview } from "@/components/home/ExperiencePreview";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { HeroSection } from "@/components/home/HeroSection";
-import { TechStackPreview } from "@/components/home/TechStackPreview";
+import { MetricsBar } from "@/components/home/MetricsBar";
+import { TeamSupport } from "@/components/home/TeamSupport";
 import { WhatIDoSection } from "@/components/home/WhatIDoSection";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <MetricsBar />
       <WhatIDoSection />
       <FeaturedProjects />
-      <ExperiencePreview />
-      <TechStackPreview />
+      <TeamSupport />
       <ContactCTA />
     </>
   );

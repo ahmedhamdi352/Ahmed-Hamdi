@@ -5,19 +5,19 @@ import { navigation, siteConfig } from "@/data/site";
 export function MobileNav() {
   return (
     <details className="group relative lg:hidden">
-      <summary className="flex size-10 cursor-pointer list-none items-center justify-center rounded-lg border border-white/10 text-slate-300 marker:hidden hover:text-white">
+      <summary className="flex size-11 cursor-pointer list-none items-center justify-center rounded-xl border border-input bg-card text-foreground marker:hidden hover:bg-secondary">
         <Menu aria-hidden="true" className="size-5" />
         <span className="sr-only">Open navigation</span>
       </summary>
       <nav
-        className="absolute right-0 top-12 z-20 flex min-w-56 flex-col gap-1 rounded-xl border border-white/10 bg-[#07111f] p-2 shadow-2xl"
+        className="absolute right-0 top-14 z-20 flex min-w-64 flex-col gap-1 rounded-2xl border border-border bg-card p-2 shadow-[0_20px_60px_rgb(23_20_18/0.14)]"
         aria-label="Mobile navigation"
       >
         {navigation.map((item) => (
           <Link
-            key={item.href}
+            key={item.label}
             href={item.href}
-            className="rounded-lg px-3 py-2.5 text-sm text-slate-300 hover:bg-white/[0.05] hover:text-white"
+            className="rounded-xl px-4 py-3 text-sm text-[var(--text-secondary)] hover:bg-secondary hover:text-primary"
           >
             {item.label}
           </Link>
@@ -25,7 +25,7 @@ export function MobileNav() {
         <a
           href={siteConfig.cvPath}
           download
-          className="mt-1 rounded-lg bg-emerald-500 px-3 py-2.5 text-sm font-medium text-slate-950"
+          className="mt-1 rounded-xl bg-primary px-4 py-3 text-sm font-medium text-primary-foreground"
         >
           Download CV
         </a>

@@ -31,6 +31,9 @@ export type Project = {
   responsibilities: string[];
   impact: string[];
   highlights: string[];
+  badge?: string;
+  modules?: string[];
+  challenges?: string[];
   preview: ProjectPreview;
 };
 
@@ -48,6 +51,7 @@ export const projects: Project[] = [
     company: "Dubai Police — Department of AI",
     year: "2025 — Present",
     featured: true,
+    badge: "Government AI Platform",
     tech: ["React", "TypeScript", "Node.js", "REST APIs", "AI Integration"],
     problem:
       "Delivering conversational services across multiple channels required a consistent interface, dependable service integration, and visibility for the teams responsible for operating the platform.",
@@ -60,14 +64,31 @@ export const projects: Project[] = [
       "Supported production readiness, maintainability, and cross-team delivery.",
     ],
     impact: [
-      "Created a consistent foundation for AI-assisted experiences across channels.",
-      "Improved operational visibility around chatbot services and user journeys.",
-      "Enabled the platform to evolve through reusable, maintainable UI patterns.",
+      "Helped deliver an AI chatbot experience across website and mobile channels.",
+      "Improved accessibility to AI-powered services.",
+      "Created a scalable foundation for future chatbot capabilities.",
+      "Supported operational visibility through related back-office flows.",
     ],
     highlights: [
       "Multi-channel conversational experience",
       "Enterprise AI service integration",
       "Production-oriented delivery",
+    ],
+    modules: [
+      "Web and mobile chatbot interface",
+      "Service selection and guided user flows",
+      "AI response rendering",
+      "Feedback and user interaction states",
+      "Internal service integration patterns",
+      "Error, loading, and fallback states",
+      "Back-office visibility support",
+    ],
+    challenges: [
+      "Maintaining consistent chatbot behavior across web and mobile channels",
+      "Integrating AI responses with backend workflows",
+      "Handling asynchronous response states",
+      "Supporting secure enterprise deployment requirements",
+      "Creating reusable UI patterns for conversational experiences",
     ],
     preview: "chatbot",
   },
@@ -84,6 +105,7 @@ export const projects: Project[] = [
     company: "Dubai Police — Department of AI",
     year: "2025 — Present",
     featured: true,
+    badge: "Secure Internal AI Hub",
     tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "RBAC"],
     problem:
       "Internal AI capabilities were difficult to discover and needed a consistent, secure access model suitable for an on-premises enterprise environment.",
@@ -96,14 +118,31 @@ export const projects: Project[] = [
       "Collaborated on maintainable platform conventions for future services.",
     ],
     impact: [
-      "Made internal AI services easier to discover and understand.",
-      "Established repeatable patterns for adding and governing new capabilities.",
-      "Supported secure adoption without fragmenting the user experience.",
+      "Created a centralized entry point for internal AI services.",
+      "Improved discoverability and usability of AI capabilities.",
+      "Supported secure service consumption across internal teams.",
+      "Established a scalable foundation for future AI services.",
     ],
     highlights: [
       "On-premises deployment",
       "Role-aware service access",
       "Reusable internal platform patterns",
+    ],
+    modules: [
+      "AI service catalog",
+      "Service request flow",
+      "Role-based access patterns",
+      "Internal service consumption",
+      "Reusable integration structure",
+      "Governed access to on-premise AI services",
+      "Request tracking and service visibility",
+    ],
+    challenges: [
+      "Making AI services accessible to internal users without exposing complexity",
+      "Supporting secure on-premise constraints",
+      "Designing reusable frontend and integration patterns",
+      "Keeping service usage controlled and governed",
+      "Preparing the platform for multiple AI service types",
     ],
     preview: "services",
   },
@@ -120,6 +159,7 @@ export const projects: Project[] = [
     company: "Dubai Police — Department of AI",
     year: "2025 — Present",
     featured: true,
+    badge: "Analytics & Operations Dashboard",
     tech: ["React", "TypeScript", "REST APIs", "Tailwind CSS", "Data Visualization"],
     problem:
       "Operational teams needed a coherent way to monitor services, review customer interaction signals, and prepare reports without navigating disconnected data views.",
@@ -132,14 +172,30 @@ export const projects: Project[] = [
       "Improved consistency across reporting and service-monitoring workflows.",
     ],
     impact: [
-      "Centralized operational context for chatbot and customer-service teams.",
-      "Made recurring monitoring and reporting workflows clearer.",
-      "Reduced UI fragmentation through shared data-view patterns.",
+      "Improved visibility into chatbot operations.",
+      "Helped teams understand service usage and customer interaction patterns.",
+      "Supported better monitoring and reporting workflows.",
+      "Created reusable dashboard UI patterns.",
     ],
     highlights: [
       "Reusable analytics views",
       "Operational decision support",
       "Service and journey monitoring",
+    ],
+    modules: [
+      "Chatbot performance dashboards",
+      "Customer insights views",
+      "Service usage analytics",
+      "Filters and reporting views",
+      "Operational monitoring screens",
+      "Empty, loading, error, and permission-aware states",
+      "Tables and chart-based views",
+    ],
+    challenges: [
+      "Presenting operational data clearly for non-technical users",
+      "Designing dashboard layouts for analytics-heavy views",
+      "Handling filters, states, and responsive layouts",
+      "Making chatbot performance easier to monitor and understand",
     ],
     preview: "insights",
   },
@@ -156,6 +212,7 @@ export const projects: Project[] = [
     company: "Apps Wave",
     year: "2024 — 2025",
     featured: false,
+    badge: "Cross-platform City Experience",
     tech: ["React Native", "React", "TypeScript", "REST APIs", "Design Systems"],
     problem:
       "City services and community experiences needed to feel coherent across mobile and web while supporting different device behaviours and evolving API integrations.",
@@ -177,6 +234,18 @@ export const projects: Project[] = [
       "Public-facing service UX",
       "Reusable cross-product patterns",
     ],
+    modules: [
+      "React Native mobile application",
+      "Responsive React web experience",
+      "City service journeys",
+      "Events and community features",
+      "Cross-platform API integrations",
+    ],
+    challenges: [
+      "Maintaining consistent product behavior across mobile and web",
+      "Adapting shared patterns to platform-specific interactions",
+      "Integrating evolving service and content APIs",
+    ],
     preview: "mobile",
   },
   {
@@ -192,6 +261,7 @@ export const projects: Project[] = [
     company: "Apps Wave",
     year: "2024 — 2025",
     featured: false,
+    badge: "Enterprise Workflow Platform",
     tech: ["React", "Next.js", "TypeScript", "REST APIs", "Tailwind CSS"],
     problem:
       "Complex project information and collaboration workflows needed to remain understandable and responsive as task, team, and resource data grew.",
@@ -213,12 +283,25 @@ export const projects: Project[] = [
       "Frontend performance",
       "Project visibility and collaboration",
     ],
+    modules: [
+      "Task management interfaces",
+      "Progress tracking views",
+      "Resource allocation screens",
+      "Complex tables and filters",
+      "Role-based workflow views",
+      "Data-heavy UI performance improvements",
+    ],
+    challenges: [
+      "Keeping dense project information understandable",
+      "Maintaining responsive performance across data-heavy screens",
+      "Supporting role-specific workflow states without fragmenting the UI",
+    ],
     preview: "workflow",
   },
   {
     slug: "pos-restaurant-operations-system",
-    title: "POS & Restaurant Operations System",
-    subtitle: "Full-stack tools for daily restaurant operations",
+    title: "Restaurant Operations Platform",
+    subtitle: "Early full-stack experience across sales and operations",
     category: "Enterprise Platform",
     description:
       "Internal POS and operations system supporting sales, administration, and restaurant workflows.",
@@ -228,6 +311,7 @@ export const projects: Project[] = [
     company: "Barq Systems",
     year: "2022 — 2024",
     featured: false,
+    badge: "Operational Full Stack System",
     tech: ["React", "Node.js", "REST APIs", "PostgreSQL", "JavaScript"],
     problem:
       "Daily sales and administrative processes relied on multiple operational steps that needed to work together clearly and reliably for different staff roles.",
@@ -248,6 +332,19 @@ export const projects: Project[] = [
       "Full-stack operational workflows",
       "Role-focused internal interfaces",
       "Sales and administration modules",
+    ],
+    modules: [
+      "POS workflows",
+      "Restaurant operations",
+      "Sales and administration flows",
+      "React frontend",
+      "Backend contribution",
+      "Internal operational system",
+    ],
+    challenges: [
+      "Connecting sales and administrative workflows reliably",
+      "Supporting different staff roles and operational states",
+      "Maintaining an evolving internal full-stack application",
     ],
     preview: "operations",
   },

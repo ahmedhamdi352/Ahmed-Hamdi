@@ -23,17 +23,17 @@ export function SectionHeader({
       }
     >
       <div>
-        <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+        <h2 className="font-display text-4xl leading-tight tracking-[-0.035em] text-foreground sm:text-5xl">
           {title}
         </h2>
         {description ? (
-          <p className="mt-2 text-sm leading-6 text-slate-400">{description}</p>
+          <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)]">{description}</p>
         ) : null}
       </div>
       {link ? (
         <Link
           href={link.href}
-          className="hidden shrink-0 items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 sm:inline-flex"
+          className="hidden shrink-0 items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark sm:inline-flex"
         >
           {link.label}
           <ArrowRight aria-hidden="true" className="size-4" />

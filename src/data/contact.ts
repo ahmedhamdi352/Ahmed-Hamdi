@@ -1,18 +1,25 @@
 export const inquiryTypes = [
-  "Full-time opportunity",
-  "Freelance project",
+  "Freelance Project",
+  "Part-time Role",
+  "Full-time Opportunity",
   "Consulting",
-  "Technical leadership / architecture",
-  "Other",
+  "Collaboration",
 ] as const;
 
 export const budgetOptions = [
   "Not sure yet",
-  "Freelance: Small project",
-  "Freelance: Medium project",
-  "Freelance: Large project",
-  "Full-time role / monthly package",
-  "Consulting / hourly rate",
+  "Less than $1,000",
+  "$1,000 - $3,000",
+  "$3,000 - $7,000",
+  "$7,000+",
+] as const;
+
+export const timelineOptions = [
+  "As soon as possible",
+  "Within 1 month",
+  "1 - 3 months",
+  "3+ months",
+  "Flexible / exploring",
 ] as const;
 
 export type ContactInfoItem = {
@@ -43,7 +50,7 @@ export const contactInfo: ContactInfoItem[] = [
   {
     id: "availability",
     label: "Availability",
-    value: "Selected full-time, freelance, and consulting opportunities",
+    value: "Freelance, part-time, consulting, and senior engineering roles",
   },
 ];
 

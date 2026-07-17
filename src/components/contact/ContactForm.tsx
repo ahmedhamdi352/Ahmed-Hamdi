@@ -16,14 +16,14 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { budgetOptions, inquiryTypes } from "@/data/contact";
+import { budgetOptions, inquiryTypes, timelineOptions } from "@/data/contact";
 import { contactSchema, type ContactInput } from "@/lib/validations";
 
 const inputClasses =
-  "h-11 border-white/10 bg-white/[0.03] px-3 text-white placeholder:text-slate-500 focus-visible:border-emerald-400/60 focus-visible:ring-emerald-400/15";
+  "h-12";
 
 const selectClasses =
-  "h-11 w-full rounded-lg border border-white/10 bg-[#0b1220] px-3 text-sm text-white outline-none transition-colors focus:border-emerald-400/60 focus:ring-3 focus:ring-emerald-400/15 disabled:cursor-not-allowed disabled:opacity-50";
+  "h-12 w-full rounded-xl border border-input bg-card px-4 text-sm text-foreground outline-none transition-[border-color,box-shadow] focus:border-ring focus:ring-3 focus:ring-ring/10 disabled:cursor-not-allowed disabled:opacity-50";
 
 export function ContactForm() {
   const [isPending, startTransition] = useTransition();
@@ -41,6 +41,7 @@ export function ContactForm() {
       email: "",
       company: "",
       budget: "",
+      timeline: undefined,
       message: "",
       website: "",
     },
@@ -81,17 +82,18 @@ export function ContactForm() {
     <form
       onSubmit={onSubmit}
       noValidate
-      className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
+      id="inquiry-form"
+      className="editorial-card scroll-mt-24 p-7 sm:p-10"
     >
       <div>
-        <p className="font-mono text-xs uppercase tracking-[0.16em] text-emerald-400">
-          Send a message
+        <p className="section-label">
+          Project or role inquiry
         </p>
-        <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white">
-          Tell me what you&apos;re working on.
+        <h2 className="font-display mt-3 text-4xl tracking-[-0.03em] text-foreground">
+          Share the useful details.
         </h2>
-        <p className="mt-3 text-sm leading-6 text-slate-400">
-          Share enough context for me to understand the opportunity or problem.
+        <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)]">
+          The goal, constraints, and timing help me reply with a practical next step.
         </p>
       </div>
 
@@ -123,26 +125,24 @@ export function ContactForm() {
           </Field>
         </div>
 
-        <Field data-invalid={Boolean(errors.company)}>
-          <FieldLabel htmlFor="company">
-            Company / Organization
-            <span className="font-normal text-slate-500">(optional)</span>
-          </FieldLabel>
-          <Input
-            id="company"
-            autoComplete="organization"
-            aria-invalid={Boolean(errors.company)}
-            className={inputClasses}
-            {...register("company")}
-          />
-          <FieldError>{errors.company?.message}</FieldError>
-        </Field>
-
         <div className="grid gap-5 sm:grid-cols-2">
-          <Field data-invalid={Boolean(errors.inquiryType)}>
-            <FieldLabel htmlFor="inquiryType">
-              What are you reaching out about?
+          <Field data-invalid={Boolean(errors.company)}>
+            <FieldLabel htmlFor="company">
+              Company
+              <span className="font-normal text-muted-foreground">(optional)</span>
             </FieldLabel>
+            <Input
+              id="company"
+              autoComplete="organization"
+              aria-invalid={Boolean(errors.company)}
+              className={inputClasses}
+              {...register("company")}
+            />
+            <FieldError>{errors.company?.message}</FieldError>
+          </Field>
+
+          <Field data-invalid={Boolean(errors.inquiryType)}>
+            <FieldLabel htmlFor="inquiryType">Inquiry type</FieldLabel>
             <select
               id="inquiryType"
               aria-invalid={Boolean(errors.inquiryType)}
@@ -162,10 +162,13 @@ export function ContactForm() {
             <FieldError>{errors.inquiryType?.message}</FieldError>
           </Field>
 
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
           <Field data-invalid={Boolean(errors.budget)}>
             <FieldLabel htmlFor="budget">
               Budget / Package range
-              <span className="font-normal text-slate-500">(optional)</span>
+              <span className="font-normal text-muted-foreground">(optional)</span>
             </FieldLabel>
             <select
               id="budget"
@@ -182,6 +185,21 @@ export function ContactForm() {
             </select>
             <FieldError>{errors.budget?.message}</FieldError>
           </Field>
+
+          <Field data-invalid={Boolean(errors.timeline)}>
+            <FieldLabel htmlFor="timeline">Timeline</FieldLabel>
+            <select
+              id="timeline"
+              aria-invalid={Boolean(errors.timeline)}
+              className={selectClasses}
+              defaultValue=""
+              {...register("timeline")}
+            >
+              <option value="" disabled>Select a timeline</option>
+              {timelineOptions.map((option) => <option key={option} value={option}>{option}</option>)}
+            </select>
+            <FieldError>{errors.timeline?.message}</FieldError>
+          </Field>
         </div>
 
         <Field data-invalid={Boolean(errors.message)}>
@@ -191,7 +209,7 @@ export function ContactForm() {
             rows={7}
             aria-invalid={Boolean(errors.message)}
             placeholder="Tell me about the role, project, timeline, scope, or the problem you’re trying to solve."
-            className="min-h-44 resize-y border-white/10 bg-white/[0.03] px-3 py-3 text-white placeholder:text-slate-500 focus-visible:border-emerald-400/60 focus-visible:ring-emerald-400/15"
+            className="min-h-44 resize-y"
             {...register("message")}
           />
           <FieldError>{errors.message?.message}</FieldError>
@@ -218,8 +236,8 @@ export function ContactForm() {
           role={result.success ? "status" : "alert"}
           className={`mt-6 flex items-start gap-3 rounded-xl border p-4 text-sm leading-6 ${
             result.success
-              ? "border-emerald-500/25 bg-emerald-500/10 text-emerald-200"
-              : "border-red-500/25 bg-red-500/10 text-red-200"
+              ? "border-primary/20 bg-primary/[0.07] text-primary"
+              : "border-red-700/20 bg-red-50 text-red-800"
           }`}
         >
           {result.success ? (
@@ -234,7 +252,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="mt-7 inline-flex h-11 items-center gap-2 rounded-lg bg-emerald-500 px-5 text-sm font-semibold text-slate-950 transition-colors hover:bg-emerald-400 disabled:cursor-not-allowed disabled:opacity-60"
+        className="button-primary mt-7 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isPending ? (
           <>
